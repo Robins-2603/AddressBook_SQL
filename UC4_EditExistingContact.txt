@@ -1,0 +1,40 @@
+mysql>  SELECT * FROM addressbook_table;
++-----------+----------+-----------+---------------+---------------+--------+--------------+------------------------------+
+| firstName | lastName | address   | city          | state         | zip    | phone_number | email_address                |
++-----------+----------+-----------+---------------+---------------+--------+--------------+------------------------------+
+| Robin     | Kumar    | ghaziabad | Uttar pradesh | Uttar pradesh | 201009 | 0123456789   | robinschandna@bridgelabz.com |
+| gaurav    | Kumar    | ghaziabad | Uttar pradesh | Uttar pradesh | 201009 | 0123456789   | gauravchandna@bridgelabz.com |
++-----------+----------+-----------+---------------+---------------+--------+--------------+------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> update addressbook_table set zip = 201009 where firstName = 'Robin';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+mysql> update addressbook_table set zip = 123456 where firstName = 'Robin';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM addressbook_table;
++-----------+----------+-----------+---------------+---------------+--------+--------------+------------------------------+
+| firstName | lastName | address   | city          | state         | zip    | phone_number | email_address                |
++-----------+----------+-----------+---------------+---------------+--------+--------------+------------------------------+
+| Robin     | Kumar    | ghaziabad | Uttar pradesh | Uttar pradesh | 123456 | 0123456789   | robinschandna@bridgelabz.com |
+| gaurav    | Kumar    | ghaziabad | Uttar pradesh | Uttar pradesh | 201009 | 0123456789   | gauravchandna@bridgelabz.com |
++-----------+----------+-----------+---------------+---------------+--------+--------------+------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> update addressbook_table set phone_number = 9888888888 where firstName = 'robin';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM addressbook_table;
++-----------+----------+-----------+---------------+---------------+--------+--------------+------------------------------+
+| firstName | lastName | address   | city          | state         | zip    | phone_number | email_address                |
++-----------+----------+-----------+---------------+---------------+--------+--------------+------------------------------+
+| Robin     | Kumar    | ghaziabad | Uttar pradesh | Uttar pradesh | 123456 | 9888888888   | robinschandna@bridgelabz.com |
+| gaurav    | Kumar    | ghaziabad | Uttar pradesh | Uttar pradesh | 201009 | 0123456789   | gauravchandna@bridgelabz.com |
++-----------+----------+-----------+---------------+---------------+--------+--------------+------------------------------+
+2 rows in set (0.00 sec)
+
+mysql>

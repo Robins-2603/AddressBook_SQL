@@ -1,0 +1,10 @@
+SELECT type, COUNT(type) FROM addressbook_table GROUP BY type ;
++--------+-------------+
+| type   | COUNT(type) |
++--------+-------------+
+| friend |           2 |
+| family |           1 |
++--------+-------------+
+2 rows in set (0.00 sec)
+
+mysql>

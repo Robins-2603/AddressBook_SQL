@@ -1,0 +1,41 @@
+mysql> SELECT * FROM addressbook_table;
++-----------+----------+-------------+---------------+---------------+--------+--------------+------------------------------+
+| firstName | lastName | address     | city          | state         | zip    | phone_number | email_address                |
++-----------+----------+-------------+---------------+---------------+--------+--------------+------------------------------+
+| gaurav    | Kumar    | ghaziabad   | Uttar pradesh | Uttar pradesh | 201009 | 0123456789   | gauravchandna@bridgelabz.com |
+| Arjun     | Reddy    | Amberpet    | Banglore      | Karnataka     | 500013 | 0123456789   | arav@gmail.com               |
+| heena     | khan     | mayur vihar | delhi         | india         | 500787 | 9999999999   | heena@gmail.com              |
++-----------+----------+-------------+---------------+---------------+--------+--------------+------------------------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT city, COUNT(firstName) FROM addressbook_table GROUP BY city ;
++---------------+------------------+
+| city          | COUNT(firstName) |
++---------------+------------------+
+| Uttar pradesh |                1 |
+| Banglore      |                1 |
+| delhi         |                1 |
++---------------+------------------+
+3 rows in set (0.01 sec)
+
+mysql> SELECT state, COUNT(firstName) FROM addressbook_table GROUP BY state ;
++---------------+------------------+
+| state         | COUNT(firstName) |
++---------------+------------------+
+| Uttar pradesh |                1 |
+| Karnataka     |                1 |
+| india         |                1 |
++---------------+------------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT state, city, COUNT(firstName) FROM addressbook_table GROUP BY state, city ;
++---------------+---------------+------------------+
+| state         | city          | COUNT(firstName) |
++---------------+---------------+------------------+
+| Uttar pradesh | Uttar pradesh |                1 |
+| Karnataka     | Banglore      |                1 |
+| india         | delhi         |                1 |
++---------------+---------------+------------------+
+3 rows in set (0.00 sec)
+
+mysql>
